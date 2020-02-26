@@ -5,7 +5,6 @@ import PostBox from './PostBox';
 
 const ProjectContainer = styled.div`
   padding: 1rem;
-
   p:first-child {
     text-align: left;
     font-size: 1.5rem;

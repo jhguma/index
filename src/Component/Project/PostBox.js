@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import PropTypes, {array} from 'prop-types';
+import PropTypes from 'prop-types';
 
 const PostBoxWrapper = styled.div`
   display: ${props => (props.resize === 300 ? 'block' : 'flex')};
   margin-top: 1rem;
+  margin-bottom: 2rem;
   border: 1px solid #e2e2e2;
   border-radius: 1rem;
   width: 100%;
