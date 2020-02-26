@@ -24,6 +24,7 @@ const Nav = styled.div`
 `;
 
 const NavRemote = styled.div`
+  display: ${props => props.resize === 300 && 'none'};
   position: absolute;
   padding: 1rem;
   background-color: black;

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {About, Career, Skill, Project} from 'Component';
 
 const ContentWrapper = styled.div`
-  width: 75%;
+  width: ${props => (props.resize === 300 ? 100 : 75)}%;
   text-align: center;
   border: 1px solid #e2e2e2;
   background-color: #fff;
@@ -15,7 +15,7 @@ const Content = props => {
   const {resize} = props;
 
   return (
-    <ContentWrapper>
+    <ContentWrapper resize={resize}>
       <About resize={resize} />
       <Career resize={resize} />
       <Skill resize={resize} />

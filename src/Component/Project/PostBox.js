@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const PostBoxWrapper = styled.div`
   display: ${props => (props.resize === 300 ? 'block' : 'flex')};
@@ -63,6 +65,12 @@ const TagBox = styled.span`
 `;
 
 class PostBox extends Component {
+  componentDidMount() {
+    AOS.init({
+      duration: 1000,
+    });
+  }
+
   makeTagBox = tag => {
     if (!tag) return null;
     const tagList = tag.replace(/\s/gi, '').split(',');
@@ -76,7 +84,7 @@ class PostBox extends Component {
     const {makeTagBox} = this;
 
     return (
-      <PostBoxWrapper resize={resize}>
+      <PostBoxWrapper resize={resize} data-aos="fade-up">
         <PostImage resize={resize}>
           {/* TODO - 자동 슬라이드쇼 적용필요 3초마다 넘어가게- */}
           <img src={`${process.env.PUBLIC_URL}/image/${imageName}.png`} width="100%" height="100%" alt="Ability" />
