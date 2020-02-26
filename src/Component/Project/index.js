@@ -11,11 +11,11 @@ const ProjectContainer = styled.div`
   }
 `;
 
-
 const Project = () => {
   return (
     <ProjectContainer>
       <p>Project</p>
+      프로젝트 소개입니다.
     </ProjectContainer>
   );
 };

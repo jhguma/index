@@ -18,19 +18,35 @@ const AboutContainer = styled.div`
 
 const Information = styled.div`
   display: flex;
-  flex-direction: ${props=> props.resize === 300 && 'column'}
+  flex-direction: ${props => props.resize === 300 && 'column'};
 `;
 
 const ImageWrap = styled.div`
   flex: 1 1 auto;
 `;
 const Readme = styled.div`
-  width:  ${props=> props.resize === 300 ? '100' : '70'}%;
+  width: ${props => (props.resize === 300 ? '100' : '70')}%;
   text-align: left;
 `;
 
-const Profile = styled.div`
+const Profile = styled.span`
   font-size: 13px;
+  position: relative;
+
+  a {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      color: #d3d3d3;
+    }
+  }
+  &::before {
+    content: url(${process.env.PUBLIC_URL}/image/${props => props.icon}.svg);
+    position: absolute;
+    top: 0.1rem;
+    left: -1rem;
+  }
 `;
 
 const About = props => {
@@ -47,12 +63,13 @@ const About = props => {
           <div>
             <b>정진호 (Jeong Jin ho)</b>
           </div>
-          <Profile>bnbn2400@gamil.com</Profile>
-          <Profile>https://github.com/jhguma</Profile>
+          <Profile icon="email">bnbn2400@gamil.com</Profile>
+          <br />
+          <Profile icon="gitIcon">
+            <a href="https://github.com/jhguma"> https://github.com/jhguma</a>
+          </Profile>
         </ImageWrap>
-        <Readme resize={resize}>
-          Readme About Me...
-        </Readme>
+        <Readme resize={resize}>Readme About Me...</Readme>
       </Information>
     </AboutContainer>
   );

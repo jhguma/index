@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -14,13 +15,12 @@ const SkillContainer = styled.div`
 `;
 
 const SkillContent = styled.div`
+  // Mobile 화면단 반응형 고려
   .txt_area {
     width: 900px;
     margin: 0 auto 20px;
     padding-bottom: 300px;
-    h3 {
-      margin-bottom: 115px;
-    }
+
     .history {
       background: url(${process.env.PUBLIC_URL}/image/skillHistory.png) 50% 0 no-repeat;
       height: 689px;
@@ -76,6 +76,8 @@ const SkillContent = styled.div`
       }
       .history2015 {
         top: 500px;
+        width: 363px;
+        left: 47px;
       }
       .history2014 {
         top: 674px;
@@ -84,7 +86,9 @@ const SkillContent = styled.div`
   }
 `;
 
-const Skill = () => {
+const Skill = props => {
+  const {resize} = props;
+  console.log(resize);
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -123,8 +127,8 @@ const Skill = () => {
 
             <dl className="history_l history2015" data-aos="fade-right">
               <dt>DataBase</dt>
-              <dd>Oracle &middot;</dd>
-              <dd>MySQL &middot;</dd>
+              <dd>&middot; Oracle</dd>
+              <dd>&middot; MySQL</dd>
             </dl>
 
             <dl className="history_r history2014" data-aos="fade-left">
@@ -139,4 +143,11 @@ const Skill = () => {
   );
 };
 
+Skill.propTypes = {
+  resize: PropTypes.number,
+};
+
+Skill.defaultProps = {
+  resize: 1004,
+};
 export default Skill;

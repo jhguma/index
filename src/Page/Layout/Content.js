@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {About, Career, Skill} from 'Component';
+import {About, Career, Skill, Project} from 'Component';
 
 const ContentWrapper = styled.div`
   width: 75%;
@@ -17,8 +17,8 @@ const Content = props => {
     <ContentWrapper>
       <About resize={resize} />
       <Career resize={resize} />
-      <Skill />
-      <div>content5 입니다</div>
+      <Skill resize={resize} />
+      <Project resize={resize} />
     </ContentWrapper>
   );
 };

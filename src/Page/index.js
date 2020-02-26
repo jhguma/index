@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
+import {animateScroll as scroll} from 'react-scroll';
+
 import Header from 'Page/Layout/Header';
 import Content from 'Page/Layout/Content';
 
@@ -24,7 +26,9 @@ class Home extends Component {
   /* eslint-disable */
   UNSAFE_componentWillMount() {
     window.addEventListener('resize', this.updateWindowDimensions);
-
+    // Scroll 이벤트
+    scroll.scrollTo(100);
+    scroll.scrollMore(100);
     this.setState({
       imageSize: window.innerWidth <= 896 ? 300 : 1004,
     });

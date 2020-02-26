@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const CareerContainer = styled.div`
   padding: 1rem;
-  background-color: #e2e2e2;
+  background-color: #f6f6f6;
   p:first-child {
     text-align: left;
     font-size: 1.5rem;
