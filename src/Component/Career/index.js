@@ -42,7 +42,7 @@ const Career = props => {
   const {resize} = props;
   return (
     <CareerContainer>
-      <p>Career</p>
+      <p><span>C</span>areer</p>
       <CareerWrapper>
         <CarrerContent resize={resize}>
           <DateTime style={{float: 'right'}}>2019-01 ~ 2019-07</DateTime>

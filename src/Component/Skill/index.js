@@ -7,23 +7,22 @@ import 'aos/dist/aos.css';
 const SkillContainer = styled.div`
   padding: 1rem;
 
-  p:first-child {
-    text-align: left;
-    font-size: 1.5rem;
-    margin: 0.5rem;
+  span:first-child {
+    color: #4863a0;
   }
 `;
 
 const SkillContent = styled.div`
   // Mobile 화면단 반응형 고려
   .txt_area {
-    width: 900px;
+    max-width: 900px;
     margin: 0 auto 20px;
     padding-bottom: 300px;
 
-    .history {
+    .skill {
       background: url(${process.env.PUBLIC_URL}/image/skillHistory.png) 50% 0 no-repeat;
       height: 689px;
+      width: 100%;
       position: relative;
       dl {
         position: absolute;
@@ -43,7 +42,7 @@ const SkillContent = styled.div`
           line-height: 1.64em;
         }
       }
-      .history_l {
+      .skill_l {
         left: -16px;
         dt {
           right: 0;
@@ -56,7 +55,7 @@ const SkillContent = styled.div`
           text-align: left;
         }
       }
-      .history_r {
+      .skill_r {
         right: -20px;
         dt {
           left: 0;
@@ -66,20 +65,20 @@ const SkillContent = styled.div`
         }
       }
 
-      .history2018 {
+      .skill-web {
         top: 166px;
         width: 363px;
         left: 47px;
       }
-      .history2017 {
+      .skill-framework {
         top: 334px;
       }
-      .history2015 {
+      .skill-database {
         top: 500px;
         width: 363px;
         left: 47px;
       }
-      .history2014 {
+      .skill-version {
         top: 674px;
       }
     }
@@ -98,15 +97,17 @@ const Skill = props => {
   return (
     <SkillContainer>
       <SkillContent className="content3" id="sitemap1-2">
-        <h1>Skill</h1>
+        <h1>
+          <span>S</span>kill
+        </h1>
         <div className="txt_area">
-          <div className="history">
-            <dl className="history_r history2019" data-aos="fade-left">
+          <div className="skill">
+            <dl className="skill_r history2019" data-aos="fade-left">
               <dt>Language</dt>
               <dd>&middot; Java</dd>
             </dl>
 
-            <dl className="history_l history2018" data-aos="fade-right">
+            <dl className="skill_l skill-web" data-aos="fade-right">
               <dt>WEB</dt>
               <dd>&middot; JavaScript(ES6+) </dd>
               <dd>&middot; React</dd>
@@ -116,7 +117,7 @@ const Skill = props => {
               <dd>&middot; Type Script </dd>
             </dl>
 
-            <dl className="history_r history2017" data-aos="fade-left">
+            <dl className="skill_r skill-framework" data-aos="fade-left">
               <dt>FrameWork</dt>
               <dd>&middot; Spring </dd>
               <dd>&middot; MyBatis</dd>
@@ -125,13 +126,13 @@ const Skill = props => {
               <dd />
             </dl>
 
-            <dl className="history_l history2015" data-aos="fade-right">
+            <dl className="skill_l skill-database" data-aos="fade-right">
               <dt>DataBase</dt>
               <dd>&middot; Oracle</dd>
               <dd>&middot; MySQL</dd>
             </dl>
 
-            <dl className="history_r history2014" data-aos="fade-left">
+            <dl className="skill_r skill-version" data-aos="fade-left">
               <dt>Version Control</dt>
               <dd>&middot; Google Drive</dd>
               <dd>&middot; Git</dd>

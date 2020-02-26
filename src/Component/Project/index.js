@@ -8,13 +8,19 @@ const ProjectContainer = styled.div`
     text-align: left;
     font-size: 1.5rem;
     margin: 0.5rem;
+
+    span:first-child {
+      color: #4863a0;
+    }
   }
 `;
 
 const Project = () => {
   return (
     <ProjectContainer>
-      <p>Project</p>
+      <p>
+        <span>P</span>roject
+      </p>
       프로젝트 소개입니다.
     </ProjectContainer>
   );
