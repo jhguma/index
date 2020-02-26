@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const AboutContainer = styled.div`
@@ -17,33 +18,52 @@ const AboutContainer = styled.div`
 
 const Information = styled.div`
   display: flex;
+  flex-direction: ${props=> props.resize === 300 && 'column'}
 `;
 
 const ImageWrap = styled.div`
-  width: 30%;
+  flex: 1 1 auto;
 `;
 const Readme = styled.div`
-  width: 70%;
+  width:  ${props=> props.resize === 300 ? '100' : '70'}%;
   text-align: left;
 `;
 
-const About = () => {
+const Profile = styled.div`
+  font-size: 13px;
+`;
+
+const About = props => {
+  const {resize} = props;
+
   return (
     <AboutContainer>
       <p>
         <span>A</span>bout
       </p>
-      <Information>
+      <Information resize={resize}>
         <ImageWrap>
-          <img src=" " alt=" " />
-          <div>Name (eN)</div>
-          <div>Email</div>
-          <div>Github</div>
+          <img src={`${process.env.PUBLIC_URL}/image/profileImage.png`} alt=" " />
+          <div>
+            <b>정진호 (Jeong Jin ho)</b>
+          </div>
+          <Profile>bnbn2400@gamil.com</Profile>
+          <Profile>https://github.com/jhguma</Profile>
         </ImageWrap>
-        <Readme>About Me</Readme>
+        <Readme resize={resize}>
+          Readme About Me...
+        </Readme>
       </Information>
     </AboutContainer>
   );
+};
+
+About.propTypes = {
+  resize: PropTypes.number,
+};
+
+About.defaultProps = {
+  resize: 1004,
 };
 
 export default About;

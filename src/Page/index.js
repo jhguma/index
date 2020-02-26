@@ -11,11 +11,49 @@ const Body = styled.div`
 `;
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
+    this.state = {
+      imageSize: 1004,
+    };
+  }
+
+  /* eslint-disable */
+  UNSAFE_componentWillMount() {
+    window.addEventListener('resize', this.updateWindowDimensions);
+
+    this.setState({
+      imageSize: window.innerWidth <= 896 ? 300 : 1004,
+    });
+  }
+  /* eslint-disable */
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    const imageSize = {};
+    if (window.innerWidth <= 896) imageSize.isMobile = true;
+    else imageSize.isMobile = false;
+    // scope.width = window.innerWidth
+    // scope.height = window.innerHeight
+    this.setState({
+      imageSize: imageSize.isMobile ? 300 : 1004,
+    });
+
+    // scope.width = window.innerWidth
+    // scope.height = window.innerHeight
+  }
   render() {
+    const {imageSize} = this.state;
     return (
       <Body>
-        <Header />
-        <Content />
+        <Header resize={imageSize} />
+        <Content resize={imageSize} />
       </Body>
     );
   }
