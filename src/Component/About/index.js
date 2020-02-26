@@ -53,7 +53,7 @@ const About = props => {
   const {resize} = props;
 
   return (
-    <AboutContainer>
+    <AboutContainer id="about">
       <p>
         <span>A</span>bout
       </p>

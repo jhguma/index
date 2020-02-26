@@ -8,6 +8,7 @@ const ContentWrapper = styled.div`
   text-align: center;
   border: 1px solid #e2e2e2;
   background-color: #fff;
+  z-index : 100;
 `;
 
 const Content = props => {

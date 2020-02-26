@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ProjectContainer = styled.div`
+  height: 1000px;
   padding: 1rem;
 
   p:first-child {
@@ -17,7 +18,7 @@ const ProjectContainer = styled.div`
 
 const Project = () => {
   return (
-    <ProjectContainer>
+    <ProjectContainer id="project">
       <p>
         <span>P</span>roject
       </p>

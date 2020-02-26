@@ -22,8 +22,8 @@ const SkillContent = styled.div`
     .skill {
       background: url(${process.env.PUBLIC_URL}/image/skillHistory.png) 50% 0 no-repeat;
       height: 689px;
-      width: 100%;
       position: relative;
+
       dl {
         position: absolute;
         top: -6px;
@@ -86,8 +86,6 @@ const SkillContent = styled.div`
 `;
 
 const Skill = props => {
-  const {resize} = props;
-  console.log(resize);
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -95,7 +93,7 @@ const Skill = props => {
   }, []);
 
   return (
-    <SkillContainer>
+    <SkillContainer id="skill">
       <SkillContent className="content3" id="sitemap1-2">
         <h1>
           <span>S</span>kill
