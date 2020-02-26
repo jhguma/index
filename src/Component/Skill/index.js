@@ -86,6 +86,11 @@ const SkillContent = styled.div`
 `;
 
 const Skill = props => {
+  const {resize} = props;
+  if (resize === 300) {
+    console.warn('추후 Skill 반응형 작업 예정입니다.');
+  }
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
