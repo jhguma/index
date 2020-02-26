@@ -38,6 +38,7 @@ const PostInput = styled.div`
   word-break:break-all;
   line-height: 1.5rem;
   position : relative;
+  max-width: 456.66px;
 
   &::before{
     position: absolute;
@@ -82,7 +83,9 @@ class PostBox extends Component {
         </PostImage>
 
         <PostInputWrapper>
-          <PostInput title="Project Name"> {title || 'title'}</PostInput>
+          <PostInput title="Project Name">
+            <b>{title || 'title'}</b>
+          </PostInput>
           <PostInput title="Tag" type="tag">
             {makeTagBox(tag) || 'tag'}
           </PostInput>
