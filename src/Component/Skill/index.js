@@ -25,58 +25,55 @@ const SkillContent = styled.div`
       position: relative;
 
       dl {
+        width: 50%;
         position: absolute;
         top: -6px;
-        width: 430px;
+        text-align: left;
         dt {
-          position: absolute;
+          position: relative;
           top: 0;
           font-weight: bold;
-          font-size: 2.78rem;
+          font-size: ${props => (props.resize === 300 ? '1rem' : '2.78rem')};
+          padding-left: 1rem;
         }
         dd {
-          position: relative;
           top: 5rem;
           right: 5rem;
-          font-size: 1.21rem;
+          font-size: ${props => (props.resize === 300 ? '1rem' : '1.21rem')};
           line-height: 1.64em;
+          margin: 0px;
+          text-align: center;
         }
       }
       .skill_l {
-        left: -16px;
+        text-align: right;
+
         dt {
           right: 0;
+          padding-right: 1rem;
         }
         dd {
-          position: relative;
           top: 5rem;
-          left: 5rem;
-          margin-right: 120px;
-          text-align: left;
+          text-align: center;
         }
       }
       .skill_r {
-        right: -20px;
+        right: 0px;
         dt {
           left: 0;
-        }
-        dd {
-          margin-left: 120px;
         }
       }
 
       .skill-web {
         top: 166px;
-        width: 363px;
-        left: 47px;
+        width: 50%;
       }
       .skill-framework {
         top: 334px;
       }
       .skill-database {
         top: 500px;
-        width: 363px;
-        left: 47px;
+        width: 50%;
       }
       .skill-version {
         top: 674px;
@@ -87,9 +84,6 @@ const SkillContent = styled.div`
 
 const Skill = props => {
   const {resize} = props;
-  if (resize === 300) {
-    console.warn('추후 Skill 반응형 작업 예정입니다.');
-  }
 
   useEffect(() => {
     AOS.init({
@@ -99,7 +93,7 @@ const Skill = props => {
 
   return (
     <SkillContainer id="skill">
-      <SkillContent className="content3" id="sitemap1-2">
+      <SkillContent className="content3" id="sitemap1-2" resize={resize}>
         <h1>
           <span>S</span>kill
         </h1>
