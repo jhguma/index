@@ -1,0 +1,113 @@
+[33mcommit c7bab97bf8eefdef86f43c2f4f6dbf08de9c82ad[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Wed Feb 26 19:32:31 2020 +0900
+
+    모바일 화면시 리모콘 삭제
+
+[33mcommit 4ad26992119ff0014e11be00a26a0cad7540ea70[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Wed Feb 26 19:16:31 2020 +0900
+
+    image 파일 추가
+
+[33mcommit 5b051e3467c490ecd26f9fb1f06e336b36808fc8[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Wed Feb 26 18:52:38 2020 +0900
+
+    mobile 화면 하단크기 조정
+
+[33mcommit 5fd4426236e6fdad3a6a5b7bd5c270ddd9b10539[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Wed Feb 26 18:50:10 2020 +0900
+
+    Project UI 구조 작업완료
+
+[33mcommit 17f7ec9234160f65a92096995d85b3cc1092f22c[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Wed Feb 26 17:35:15 2020 +0900
+
+    skill 반응형 적용
+
+[33mcommit 245ea8b6c61965ee6f9c4aca21cd803842362e1d[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Wed Feb 26 17:02:53 2020 +0900
+
+    파비콘 변경
+
+[33mcommit 54ffca78201ab49c74531f3bd88108b09c47c0ea[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Wed Feb 26 16:54:25 2020 +0900
+
+    NavBar, RemoteButton 추가
+
+[33mcommit f08f584450b07ad87fca2d14310968b286e5c5f8[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Wed Feb 26 15:00:01 2020 +0900
+
+    Title 앞자리 color 색상 추가
+
+[33mcommit bf3e255d4ee3b2113ec3f1fd6b8cbac9cfee16c9[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Wed Feb 26 14:27:02 2020 +0900
+
+    about Icon 추가
+
+[33mcommit fd343416321287724490a6924416154fa94c099c[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Wed Feb 26 13:27:24 2020 +0900
+
+    Skill aos 적용, style 변경전
+
+[33mcommit b193b48045c27925b1d62a9de612e702fe1b884d[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Wed Feb 26 12:41:27 2020 +0900
+
+    Carrer 작성 완료 모바일 화면 고려
+
+[33mcommit 0cebb1104a6d8a767f6f0d4269db1ae5c79cb767[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Mon Feb 24 19:17:03 2020 +0900
+
+    background 이미지 변경, 화면 사이즈에따라 크기변경 적용
+
+[33mcommit ddd78d2021d698ff95ffad3e75b2a45748ad33e7[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Mon Feb 24 18:02:44 2020 +0900
+
+    Header 작업 완료, Content 레이아웃 틀 작성
+
+[33mcommit a29f5351961361eada5b1902a94ef4283c5bf1a8[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Mon Feb 24 17:26:31 2020 +0900
+
+    필요없는 파일 삭제
+
+[33mcommit 1cc35c1558a505964318a8392beb97e92239ca9f[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Mon Feb 24 17:24:19 2020 +0900
+
+    Layout 구조화 작업 시작
+
+[33mcommit 2b3b6f76fc2ae3909cb0c248df99b2e71ad3ed3b[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Mon Feb 24 17:24:01 2020 +0900
+
+    eslint, prettier , airbnb 설정 적용
+
+[33mcommit 12104eb7815525760f6ec51a2230a60b845bf775[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Mon Feb 24 17:23:31 2020 +0900
+
+    default 경로 절대경로로 고정
+
+[33mcommit b6986b7924b8b5e41bffa99cd8acd9937b2c0f67[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Mon Feb 24 17:23:12 2020 +0900
+
+    eslint , prettier 적용
+
+[33mcommit 6b155a67a71d825fb0c2da235a7d7b52a9cd5d45[m
+Author: jhguma <bnbn2400@naver.com>
+Date:   Mon Feb 24 16:48:18 2020 +0900
+
+    Initialize project using Create React App

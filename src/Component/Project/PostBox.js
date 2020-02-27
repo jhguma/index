@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Tag from 'Component/Tag';
 
 const PostBoxWrapper = styled.div`
   display: ${props => (props.resize === 300 ? 'block' : 'flex')};
@@ -52,18 +53,6 @@ const PostInput = styled.div`
 
 `;
 
-const TagBox = styled.span`
-  padding: 0.5rem;
-  padding-top: 0.1rem;
-  padding-bottom: 0.3rem;
-  margin-right: 0.4rem;
-  font-size: 12px;
-  background: black;
-  color: #fff;
-  border-radius: 0.5rem;
-  text-align: center;
-`;
-
 class PostBox extends Component {
   componentDidMount() {
     AOS.init({
@@ -71,20 +60,11 @@ class PostBox extends Component {
     });
   }
 
-  makeTagBox = tag => {
-    if (!tag) return null;
-    const tagList = tag.replace(/\s/gi, '').split(',');
-    return tagList.map((tagName, index) => {
-      return <TagBox key={`${tagName + index}`}>{tagName}</TagBox>;
-    });
-  };
-
   render() {
-    const {resize, title, tag, imageName, children} = this.props;
-    const {makeTagBox} = this;
+    const {resize, title, tag, imageName, children, onClick} = this.props;
 
     return (
-      <PostBoxWrapper resize={resize} data-aos="fade-up">
+      <PostBoxWrapper resize={resize} data-aos="fade-up" onClick={()=> onClick(title)}>
         <PostImage resize={resize}>
           {/* TODO - 자동 슬라이드쇼 적용필요 3초마다 넘어가게- */}
           <img src={`${process.env.PUBLIC_URL}/image/${imageName}.png`} width="100%" height="100%" alt="Ability" />
@@ -95,12 +75,13 @@ class PostBox extends Component {
             <b>{title || 'title'}</b>
           </PostInput>
           <PostInput title="Tag" type="tag">
-            {makeTagBox(tag) || 'tag'}
+            <Tag tags={tag} />
           </PostInput>
           <PostInput title="Explanation" type="content">
             {children || 'content'}
           </PostInput>
         </PostInputWrapper>
+        {/* TODO - Click시 Modal 상세페이지 나타나야함 */}
       </PostBoxWrapper>
     );
   }
@@ -111,6 +92,7 @@ PostBox.propTypes = {
   title: PropTypes.string,
   tag: PropTypes.string,
   imageName: PropTypes.string,
+  onClick: PropTypes.func,
   children: PropTypes.oneOfType(PropTypes.string, PropTypes.object, PropTypes.array),
 };
 
@@ -119,6 +101,7 @@ PostBox.defaultProps = {
   title: '',
   tag: '',
   imageName: '',
+  onClick: () => {},
   children: null,
 };
 

@@ -13,7 +13,6 @@ const SkillContainer = styled.div`
 `;
 
 const SkillContent = styled.div`
-  // Mobile 화면단 반응형 고려
   .txt_area {
     max-width: 900px;
     margin: 0 auto 20px;
