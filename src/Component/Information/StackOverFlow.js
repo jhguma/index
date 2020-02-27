@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import 'Component/Information/modal.css';
 import Tag from 'Component/Tag';
+import Slider from 'Component/Slider';
 
 const BackGround = styled.div`
   position: fixed;
@@ -51,12 +52,14 @@ const Title = styled.div`
   margin-right: auto;
   position: relative;
   &::before {
+    width: 90px;
     position: absolute;
     content: '프로젝트 명';
     top: -26px;
     font-weight: normal;
     font-size: 13px;
     color: #3680b0;
+    text-align: left;
   }
 `;
 
@@ -72,10 +75,10 @@ class StackOverFlow extends Component {
       <BackGround className="backdropStyle" id="stackoverflow" resize={resize}>
         <ModalContainer resize={resize}>
           <ImageSlide>
-            <div style={{padding: '10rem', background: '#e2e2e2'}}> slide</div>
+            <Slider slides={['stackOverFlow','lpV1Main']} />
           </ImageSlide>
           <div className="ModalHeaderWrap">
-            <Title>Korea StackOverFlow</Title>
+            <Title>Ability</Title>
             <Tag tags={tag} />
           </div>
           <div className="ModalBody">content</div>
