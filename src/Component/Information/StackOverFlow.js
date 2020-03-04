@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import 'Component/Information/modal.css';
 import Tag from 'Component/Tag';
 import Slider from 'Component/Slider';
+import Slideshow from 'Component/Slider/a'
 
 const BackGround = styled.div`
   position: fixed;
@@ -74,9 +75,7 @@ class StackOverFlow extends Component {
     return (
       <BackGround className="backdropStyle" id="stackoverflow" resize={resize}>
         <ModalContainer resize={resize}>
-          <ImageSlide>
-            <Slider slides={['stackOverFlow','lpV1Main']} />
-          </ImageSlide>
+            <Slideshow slideImages={['stackOverFlow','lpV1Main']} />
           <div className="ModalHeaderWrap">
             <Title>Ability</Title>
             <Tag tags={tag} />
