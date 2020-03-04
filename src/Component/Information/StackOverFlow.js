@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import 'Component/Information/modal.css';
 import Tag from 'Component/Tag';
-import Slider from 'Component/Slider';
-import Slideshow from 'Component/Slider/a'
+import Slideshow from 'Component/Slider';
 
 const BackGround = styled.div`
   position: fixed;
@@ -39,14 +38,6 @@ const ModalFooter = styled.div`
   }
 `;
 
-const ImageSlide = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
-`;
-
 const Title = styled.div`
   font-size: 1rem;
   font-weight: 500;
@@ -75,7 +66,7 @@ class StackOverFlow extends Component {
     return (
       <BackGround className="backdropStyle" id="stackoverflow" resize={resize}>
         <ModalContainer resize={resize}>
-            <Slideshow slideImages={['stackOverFlow','lpV1Main']} />
+          <Slideshow slideImages={['stackOverFlow','lpV1Main']} />
           <div className="ModalHeaderWrap">
             <Title>Ability</Title>
             <Tag tags={tag} />

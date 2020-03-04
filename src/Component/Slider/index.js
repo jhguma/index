@@ -1,103 +1,56 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React from 'react';
 import PropTypes from 'prop-types';
-
-const SliderContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-
-const SliderWrapper = styled.div`
-  overflow: hidden;
-  width: 60%;
-  height: 300px;
-`;
-
-const ImageWrapper = styled.ul`
-  transition: left 2s;
-  height: 100%;
-
-  & li {
-    background: #ccc;
-    list-style-type: none;
-    margin: auto;
-  }
-`;
-const PageNaitionWrap = styled.ul`
-  text-align: center;
-  top: -50px;
-  z-index: 1000;
-  position: relative;
-`;
-
-const PageNaition = styled.li`
-  width: 10px;
-  height: 10px;
-  border-radius: 1rem;
-  cursor: pointer;
-  background-color: black;
-  display: inline-block;
-  margin-right: 8px;
-`;
-
-class Slider extends Component {
-  constructor(props) {
-    super(props);
-
+import { Slide } from 'react-slideshow-image';
+ 
+class Slideshow extends React.Component{
+  constructor(props){
+    super(props)
+    
     this.state = {
-      active: 0,
-    };
+      duration: 5000,
+      transitionDuration: 500,
+      infinite: true,
+      indicators: true,
+      arrows: true,
+    }
   }
 
-  updateSlide = newState => {
-    this.setState({active: newState});
-  };
-
-  setImageFile = () => {
-    const {slides} = this.props;
-    const {active} = this.state;
-
-    return (
-      <li slides={slides}>
-        <img src={`${process.env.PUBLIC_URL}/image/${slides[active]}.png`} alt=" " width="100%" height="100%" />
-      </li>
-    );
-  };
-
-  togglePageButton = () => {
-    const {slides} = this.props;
-    const {updateSlide} = this;
-    return slides.map((item, index) => {
-      return <PageNaition onClick={() => updateSlide(index)} />;
-    });
-  };
-
-  render() {
-    const {setImageFile, togglePageButton} = this;
-
-    return (
-      <SliderContainer>
-        <SliderWrapper>
-          <ImageWrapper>{setImageFile()}</ImageWrapper>
-        </SliderWrapper>
-        <div>
-          <PageNaitionWrap>{togglePageButton()}</PageNaitionWrap>
+  setSlideMake = () =>{
+    const {slideImages} =this.props;
+    
+    return slideImages.map(item =>{
+      // TODO hegiht값 조정 필요
+      return (
+        <div key={`keys${item}`} className="each-slide">
+          <div style={{'backgroundImage': `url(${process.env.PUBLIC_URL}/image/${item}.png)`,height:"500px"}} />
         </div>
-      </SliderContainer>
-    );
+      )
+    })
   }
+
+  render(){
+    const {setSlideMake} = this
+    const {duration ,transitionDuration , infinite , indicators , arrows} = this.state
+    return (
+      <div className="slide-container" >
+        <Slide duration={duration} transitionDuration={transitionDuration} infinite={infinite} indicators={indicators} arrows={arrows}>
+          {setSlideMake()}
+        </Slide>
+      </div>
+    )
+    }  
+
 }
 
-Slider.propTypes = {
+Slideshow.propTypes = {
   resize: PropTypes.number,
-  slides: PropTypes.array,
+  slideImages: PropTypes.array,
 };
 
-Slider.defaultProps = {
+Slideshow.defaultProps = {
   resize: 1004,
-  slides: [],
+  slideImages: [],
 };
 
-export default Slider;
+
+export default Slideshow;
