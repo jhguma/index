@@ -4,7 +4,7 @@ import Styled from 'styled-components';
 import { Slide } from 'react-slideshow-image';
  
 const ImgTag = Styled.div`
-  background: ${props=> `url(${process.env.PUBLIC_URL}/image/${props.item}.png) no-repeat`};
+  background: ${props=> `url(${process.env.PUBLIC_URL}/image/${props.item}.png) top center no-repeat`};
   background-size : contain;
   height:500px;
 
