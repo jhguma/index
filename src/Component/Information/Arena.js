@@ -66,7 +66,7 @@ class Arena extends Component {
     return (
       <BackGround className="backdropStyle" id="stackoverflow" resize={resize}>
         <ModalContainer resize={resize}>
-          <Slideshow slideImages={['Arena-main']} />
+          <Slideshow slideImages={['Arena-main','Arena-setting','Arena-confirm','Arena-confirm-error','Arena-status','Arena-result']} />
           <div className="ModalHeaderWrap">
             <Title>Ability</Title>
             <Tag tags={tag} />
