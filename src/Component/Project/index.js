@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import {StackOverFlow} from 'Component/Information';
+import {StackOverFlow,LpV1,LpV2,Arena} from 'Component/Information';
 import PostBox from './PostBox';
 
 const ProjectContainer = styled.div`
@@ -39,11 +39,22 @@ class Project extends React.Component {
     const {resize} = this.props;
     const {toggleClose} = this;
     const {ability, lpV1, lpV2, arena, tag} = this.state;
-
     if (name === ability) {
       this.setState({
         Modal: <StackOverFlow resize={resize} tag={tag.stackOverFlow} onClick={toggleClose} />,
       });
+    }else if(name === lpV1) {
+      this.setState({
+        Modal: <LpV1 resize={resize} tag={tag.lpV1} onClick={toggleClose} />,
+      });
+    }else if(name ===lpV2) {
+      this.setState({
+        Modal : <LpV2 resize={resize} tag={tag.lpV2} onClick={toggleClose} />
+      })
+    }else if(name === arena) {
+      this.setState({
+        Modal : <Arena resize={resize} tag={tag.arena} onClick={toggleClose} />
+      })
     }
   };
 
