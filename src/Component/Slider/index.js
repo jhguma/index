@@ -1,7 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Styled from 'styled-components';
 import { Slide } from 'react-slideshow-image';
  
+const ImgTag = Styled.div`
+  background: ${props=> `url(${process.env.PUBLIC_URL}/image/${props.item}.png) no-repeat`};
+  background-size : contain;
+  height:500px;
+
+`
+
 class Slideshow extends React.Component{
   constructor(props){
     super(props)
@@ -22,7 +30,7 @@ class Slideshow extends React.Component{
       // TODO hegiht값 조정 필요
       return (
         <div key={`keys${item}`} className="each-slide">
-          <div style={{'backgroundImage': `url(${process.env.PUBLIC_URL}/image/${item}.png)`,height:"500px"}} />
+          <ImgTag item={item} />
         </div>
       )
     })

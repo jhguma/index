@@ -66,7 +66,7 @@ class LpV2 extends Component {
     return (
       <BackGround className="backdropStyle" id="stackoverflow" resize={resize}>
         <ModalContainer resize={resize}>
-          <Slideshow slideImages={['lpV1Main']} />
+          <Slideshow slideImages={['LpV2Login','lpV2Main','LpV2Controll','LpV2OrderBright','LpV2createLpsetting','LpV2createLpsetting']} />
           <div className="ModalHeaderWrap">
             <Title>Ability</Title>
             <Tag tags={tag} />
